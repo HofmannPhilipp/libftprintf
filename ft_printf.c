@@ -6,7 +6,7 @@
 /*   By: phhofman <phhofman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 19:13:27 by phhofman          #+#    #+#             */
-/*   Updated: 2024/10/22 15:10:49 by phhofman         ###   ########.fr       */
+/*   Updated: 2024/10/22 15:20:58 by phhofman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,6 @@ int	ft_printf(const char *format_str, ...)
 // {
 // 	void *ptr;
 // 	ptr = malloc(10);
-// 	printf("%d\n",ft_printf("\n"));
-// 	printf("%d\n",printf("%s\n", 0));
+// 	printf("%d\n",ft_printf("%s\n", NULL));
+// 	printf("%d\n",printf("%s\n", NULL));
 // }
