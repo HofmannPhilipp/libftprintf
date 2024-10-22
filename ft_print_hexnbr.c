@@ -6,7 +6,7 @@
 /*   By: phhofman <phhofman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 10:17:32 by phhofman          #+#    #+#             */
-/*   Updated: 2024/10/22 16:39:37 by phhofman         ###   ########.fr       */
+/*   Updated: 2024/10/22 17:43:06 by phhofman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,20 @@
 int	ft_print_hexnbr(unsigned long n, char *hex_format)
 {
 	int		write_count;
+	int	check_error;
 
 	write_count = 0;
+	check_error = 0;
 	if (n < 16)
 	{
 		if (ft_print_char(hex_format[n]) == -1)
 			return (-1);
 		return (1);
 	}
-	write_count += ft_print_hexnbr(n / 16, hex_format);
+	check_error = ft_print_hexnbr(n / 16, hex_format);
+	if (check_error == -1)
+		return (-1);
+	write_count += check_error;
 	if (ft_print_char(hex_format[n % 16]) == -1)
 		return (-1);
 	write_count++;

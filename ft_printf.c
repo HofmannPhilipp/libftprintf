@@ -6,11 +6,16 @@
 /*   By: phhofman <phhofman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 19:13:27 by phhofman          #+#    #+#             */
-/*   Updated: 2024/10/22 16:41:51 by phhofman         ###   ########.fr       */
+/*   Updated: 2024/10/22 17:40:25 by phhofman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+// static int	is_valid_format_specifier()
+// {
+	
+// }
 
 static int	print_format_specifier(char c, va_list ap)
 {
@@ -53,7 +58,7 @@ static int	print_format_specifier(char c, va_list ap)
 	}
 	if (c == 'X')
 	{
-		temp = ft_print_hexnbr_uppercase(va_arg(ap, unsigned int), "0123456789ABCDEF");
+		temp = ft_print_hexnbr(va_arg(ap, unsigned int), "0123456789ABCDEF");
 		if (temp == -1)
 			return (-1);
 		write_count += temp;
@@ -82,29 +87,32 @@ int	ft_printf(const char *format_str, ...)
 {
 	va_list	ap;
 	int	i;
-	int	count;
+	int	write_count;
+	int check_error;
 
 	va_start(ap, format_str);
-
 	i = 0;
-	count = 0;
+	write_count = 0;
 	while (format_str[i])
 	{
 		if (format_str[i] != '%')
 		{
 			if (ft_print_char(format_str[i]) == -1)
 				return (-1);
-			count++;
+			write_count++;
 		}
 		if (format_str[i] == '%' && format_str[i + 1] != '\0')
 		{
 			i ++;
-			count += print_format_specifier(format_str[i], ap);
+			check_error = print_format_specifier(format_str[i], ap);
+			if (check_error == -1)
+				return (-1);
+			write_count += check_error;
 		}
 		i ++;
 	}
 	va_end(ap);
-	return (count);
+	return (write_count);
 }
 
 // int main(void)

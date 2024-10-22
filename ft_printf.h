@@ -6,17 +6,16 @@
 /*   By: phhofman <phhofman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:31:17 by phhofman          #+#    #+#             */
-/*   Updated: 2024/10/22 16:38:55 by phhofman         ###   ########.fr       */
+/*   Updated: 2024/10/22 16:45:59 by phhofman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FTPRINTF_H
-# define FTPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
-#include <stdio.h>
-
+# include <stdio.h>
 
 int	ft_print_unsignednbr(unsigned int n);
 int	ft_print_str(char *s);
