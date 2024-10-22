@@ -6,7 +6,7 @@
 /*   By: phhofman <phhofman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:31:17 by phhofman          #+#    #+#             */
-/*   Updated: 2024/10/22 16:32:04 by phhofman         ###   ########.fr       */
+/*   Updated: 2024/10/22 16:38:55 by phhofman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	ft_print_str(char *s);
 int	ft_print_nbr(int n);
 int	ft_print_char(char c);
 int	ft_printf(const char *fromat_str, ...);
-int	ft_print_hexnbr(unsigned long n);
-int	ft_print_hexnbr_uppercase(unsigned long n);
+int	ft_print_hexnbr(unsigned long n, char *hex_format);
 
 #endif
