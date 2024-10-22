@@ -6,17 +6,19 @@
 /*   By: phhofman <phhofman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 09:24:57 by phhofman          #+#    #+#             */
-/*   Updated: 2024/10/22 14:41:31 by phhofman         ###   ########.fr       */
+/*   Updated: 2024/10/22 15:13:00 by phhofman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "ft_printf.h"
 
-static size_t	get_digit_count(int n)
+static size_t	get_digit_count(unsigned int n)
 {
 	size_t	len;
 
+	if (n == 0)
+		return (1);
 	len = 0;
 	while (n > 0)
 	{
@@ -26,8 +28,10 @@ static size_t	get_digit_count(int n)
 	return (len);
 }
 
-static void	convert_number_to_string(char *str, int n, size_t i)
+static void	convert_number_to_string(char *str, unsigned int n, size_t i)
 {
+	if (n == 0)
+		str[i] = '0';
 	while (n > 0)
 	{
 		str[i] = (n % 10) + '0';
@@ -52,12 +56,4 @@ int	ft_print_unsignednbr(unsigned int n)
 	write_count += ft_print_str(result_str);
 	free(result_str);
 	return (write_count);
-}
-int main(void)
-{
-	void *ptr;
-	ptr = malloc(10);
-	printf("%d\n",ft_printf("%u\n", 0));
-	printf("%d\n",printf("%u\n",0));
-	return 0;
 }

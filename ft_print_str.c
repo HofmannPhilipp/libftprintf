@@ -19,7 +19,7 @@ int	ft_print_str(char *s)
 	write_length = 0;
 	while(*s)
 	{
-		if (!write(1, s, 1))
+		if (write(1, s, 1) == -1)
 			return (-1);
 		write_length++;
 		s++;

@@ -6,7 +6,7 @@
 /*   By: phhofman <phhofman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:45:10 by phhofman          #+#    #+#             */
-/*   Updated: 2024/10/22 14:29:57 by phhofman         ###   ########.fr       */
+/*   Updated: 2024/10/22 15:10:58 by phhofman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static size_t	get_digit_count(int n)
 {
 	size_t	len;
 
+	if (n == 0)
+		return (1);
 	len = 0;
 	while (n > 0)
 	{
