@@ -6,7 +6,7 @@
 /*   By: phhofman <phhofman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 19:13:27 by phhofman          #+#    #+#             */
-/*   Updated: 2024/10/22 15:20:58 by phhofman         ###   ########.fr       */
+/*   Updated: 2024/10/22 16:29:14 by phhofman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,14 @@ static int	print_format_specifier(char c, va_list ap)
 	}
 	if (c == 'x')
 	{
-		temp = ft_print_hexnbr(va_arg(ap, unsigned int), 0);
+		temp = ft_print_hexnbr(va_arg(ap, unsigned int));
 		if (temp == -1)
 			return (-1);
 		write_count += temp;
 	}
 	if (c == 'X')
 	{
-		temp = ft_print_hexnbr(va_arg(ap, unsigned int), 1);
+		temp = ft_print_hexnbr_uppercase(va_arg(ap, unsigned int));
 		if (temp == -1)
 			return (-1);
 		write_count += temp;
@@ -63,7 +63,7 @@ static int	print_format_specifier(char c, va_list ap)
 		if(ft_print_str("0x") == -1)
 			return (-1);
 		write_count += 2;
-		temp = ft_print_hexnbr(va_arg(ap, unsigned long),0);
+		temp = ft_print_hexnbr(va_arg(ap, unsigned long));
 		if (temp == -1)
 			return (-1);
 		write_count += temp;
@@ -104,7 +104,6 @@ int	ft_printf(const char *format_str, ...)
 		i ++;
 	}
 	va_end(ap);
-
 	return (count);
 }
 

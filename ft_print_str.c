@@ -17,9 +17,9 @@ int	ft_print_str(char *s)
 	int	write_length;
 
 	write_length = 0;
-	if(!s)
+	if (!s)
 		s = "(null)";
-	while(*s)
+	while (*s)
 	{
 		if (write(1, s, 1) == -1)
 			return (-1);

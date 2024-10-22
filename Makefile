@@ -1,8 +1,9 @@
 CC = CC
 CFLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a
-SRCS = ft_printf.c ft_print_char.c ft_print_str.c \
-		ft_print_nbr.c ft_print_hexnbr.c ft_print_unsignednbr.c
+SRCS = 	ft_printf.c ft_print_char.c ft_print_str.c \
+		ft_print_nbr.c ft_print_hexnbr.c ft_print_hexnbr_uppercase.c \
+		ft_print_unsignednbr.c
 
 OBJS = $(SRCS:.c=.o)
 
