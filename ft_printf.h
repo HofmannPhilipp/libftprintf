@@ -6,7 +6,7 @@
 /*   By: phhofman <phhofman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:31:17 by phhofman          #+#    #+#             */
-/*   Updated: 2024/10/23 14:46:27 by phhofman         ###   ########.fr       */
+/*   Updated: 2024/10/24 14:00:32 by phhofman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdio.h>
 
 int	ft_print_unsignednbr(unsigned int n);
 int	ft_print_str(char *s);
